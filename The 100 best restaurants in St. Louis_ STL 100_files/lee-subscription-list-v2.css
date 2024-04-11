@@ -1,0 +1,193 @@
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: 768px) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+    
+}
+
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+.lee-services-list .loading {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    left:0;
+}
+
+.lee-services-list .packages { 
+    opacity:0; 
+    transition: opacity .5s; 
+}
+
+
+.lee-featured-subscription,
+.lee-services-list .promotion,
+.lee-services-list .has-promotion .price,
+.lee-services-list .special-title,
+.lee-services-list .banner,
+.lee-services-list .label-tag { display: none; }
+.lee-services-list .has-promotion .promotion,
+.lee-services-list .has-special-title .special-title,
+.lee-services-list .has-banner .banner,
+.lee-services-list .has-label .label-tag { display: inline-block; }
+
+/* single package */
+#lee-services-modal.packages_1 .btn { 
+    border-radius: 20px; 
+    font-weight: normal; 
+}
+.lee-services-list .single-package { padding: 10px 20px 20px 20px; }
+.lee-services-list .single-package .html .text-muted { color: #777; }
+.lee-services-list .single-package .html p,
+.lee-services-list .single-package .html .tnt-check { float: left; }
+.lee-services-list .single-package .html p {
+    clear: left;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+.lee-services-list .single-package .html .tnt-check {
+    font-size: 22px;
+    margin-right: 10px;
+    color: var(--lee-blox-accent-color);
+}
+.lee-services-list .single-package .offer-inner .price,
+.lee-services-list .single-package .offer-inner .promotion {
+    font-size: 26px;
+    font-weight: bold;
+}
+.lee-services-list .single-package .offer-inner { width: 100%; }
+.lee-services-list .single-package .offer-inner .btn-block {
+    max-width: 80%;
+    margin: auto;
+    padding: 12px;
+    font-weight: bold!important;
+    margin: 15px auto;
+    font-size: 16px;
+}
+.lee-services-list .single-package .offer-inner .tagline,
+.lee-services-list .single-package .offer-inner .special-title { color: #888; }
+.lee-services-list .single-package .html-col { margin-top: 20px; }
+@media (min-width: 992px) {
+    .lee-services-list .single-package { padding: 10px 30px 20px 30px; }
+    .lee-services-list .single-package .html-col { margin-top:0; border-right: 1px solid #ccc; }
+    .lee-services-list .single-package.row { 
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-flow: row-reverse;
+    }
+    .lee-services-list.single .single-package.row  .col-md-6 { 
+        display: flex;
+        float: none;
+        align-items: center;
+    }
+}
+
+
+
+
+/* multi package */
+.lee-services-list.multiple .package {
+    border: 1px solid #888;
+    width: 100%;
+    box-shadow: 0px 3px 20px 1px rgba(0, 0, 0, 0.15);
+    padding: 20px 15px 25px 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+#lee-services-modal .lee-services-list.multiple .package { box-shadow: none; }
+.lee-services-list.multiple .package .title {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.lee-services-list.multiple .package .price-wrapper {
+    font-weight: 700;
+    font-size: 18px;
+}
+.lee-services-list.multiple .package .btn {
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 15px;
+}
+.lee-services-list.multiple .package .promotion.term {
+    font-size: 12px;
+    color: #888;
+}
+.lee-services-list.multiple .package .banner {
+    background-color: #e41b1b;
+    padding: 5px 30px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-left: -30px;
+    position: relative;
+    font-weight: 300;
+    margin-top: 15px;
+}
+.lee-services-list.multiple .package .banner:before {
+    left: 0;
+    border-width: 1em 0 0 1em;
+    content: "";
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-color: #7f100f transparent transparent transparent;
+    bottom: -1em;
+}
+.lee-services-list.multiple .package .description { color: #777; }
+.lee-services-list.multiple .package .footer {
+    border-top: 2px solid #eee;
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+@media (min-width: 992px) {
+    .lee-services-list.multiple .row { 
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .lee-services-list.multiple .row > [class*='col-'] {
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+    .lee-services-list.multiple .featured-package { margin: 0px!important; }
+    .lee-services-list.multiple .package {
+        display: flex;
+        flex-direction: column;
+    }
+    .lee-services-list .package .header {
+        margin-bottom: auto;
+    }
+}

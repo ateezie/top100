@@ -1,0 +1,154 @@
+var __TRINITY_IS_LEGACY__ = false;
+
+try {
+  eval('({...{x: 1}})');
+  eval('let b = window?.x ?? document');
+  eval('(async () => { await Promise.resolve(); })()');
+  eval('const fn = ({a, b = {}, ...c}) => {}');
+  eval('`${window.x}`');
+  eval('(async () => { for await (const item of []) {} })()');
+
+  if (!window.fetch) throw 'No fetch';
+  if (!(typeof Symbol)) throw 'No Symbol';
+} catch (error) {
+  __TRINITY_IS_LEGACY__ = error;
+}
+(function() {
+    var prefix = __TRINITY_IS_LEGACY__ ? 'legacy/' : '';
+
+    window.TRINITY_PLAYER = window.TRINITY_PLAYER || {
+        isLegacyBrowser: !!__TRINITY_IS_LEGACY__,
+        isDev: false,
+        domain: 'stltoday.com',
+        options: {
+            useBunnyCDN: 0,
+            serverSubdomain: '',
+            pageURL: 'https://www.stltoday.com/life-entertainment/local/food-drink/restaurants/best-restaurants-in-st-louis-stl-100/article_32b29e66-e16c-11ee-91ac-0f41a6733f29.html',
+            disabledDepartEvents: ["injectorImp"]        },
+        config: {
+            injectorScript: 'https://vd.trinitymedia.ai/trinity-player/tts-player/20240410_0a92857ffd73440af17af1d927bd3c6d17cd12a6/' + prefix + 'trinity-injector-script' + '.js'
+        },
+        userAgentData: {"browser":"Chrome","os":"Mac OS X","os_ver":"10.15.7","device":"Mac","browser_ver":"123.0.0","is_bot":false,"is_legacy_browser":true},
+        SDKData: {},
+        userId: 'd5147c44-30d4-470a-92eb-3bf045c153ab',
+        server: 'ip-10-64-82-149.thetimmedia.site',
+        server_region: 'NA',
+        server_env: 'NA',
+        publisherId: '23790',
+        ts: Date.now(),
+        tsServer: 1712845712571,
+        isOembed: 0    };
+    const TP = window.TRINITY_PLAYER;
+    const d = document;
+
+    const playerId = d.currentScript.dataset.playerId || '' || 'f14edd34401aa66d80e68cae1dd2622c'
+    d.currentScript.setAttribute('data-player-id', playerId); // set dynamically generated ID
+
+    
+    TP.players = TP.players || {};
+    TP.players[playerId] = {
+        isIframe: '',
+        isAMP: '',
+        abTestAlias: '',
+        adsDurationThreshold: '',
+        cf: '',
+        contentURL: 'https://www.stltoday.com/life-entertainment/local/food-drink/restaurants/best-restaurants-in-st-louis-stl-100/article_32b29e66-e16c-11ee-91ac-0f41a6733f29.html',
+        documentLoadType: '',
+        documentLoadTypeSelector: '',
+        estimatedDuration: '',
+        filters: [{"name":"nodefiltered","params":["tncms-region-ads","tncms-region","inline-asset","twitter-tweet","social-share-links","tncms-inline-relcontent","subscription-required","inline-article-recommend","hidden-print","media-body"]}],
+        FABConfig: {"m_bottom":"7%","bottom":"7%"},
+        FABOnly: false,
+        isShowFAB: true,
+        displayExpanded: {"integration":"adtelligent"},
+        displayOverlay: {"returnToPlayer":{},"integration":"adtelligent"},
+        isTrinityEnabled: true,
+        isShareEnabled: 0,
+        shareEndpoint: '',
+        isNewTextApproach: false,
+        selectorVersion: '1',
+        headlineSelector: '',
+        articleSelector: '',
+        textSelector: '#article-body',
+        imageSelector: '',
+        language: 'en',
+        isTranslationEnabled: true,
+        loaderText: '',
+        paramsObject: {},
+        partnerName: 'Flex',
+        isShowPoweredBy: true,
+        isPoweredByLinkDisabled: '',
+        placeholderSelector: {},
+        playerMode: '',
+        playerType: '',
+        pubShare: '1',
+        publisherSections: [{"regexp":".com/(?:(\\w+(?:\\-\\w+)?|\\w+(?:\\-and-\\w+))?)/(?:[\\w\\-\\.]*\\/)*","selector":"","example":"https://buffalonews.com/fsd/article_24df0e59-4441-5197-9f42-0d0d6af8b7cb.html","type":"url"},{"regexp":".com/[\\w\\-]+\\/(?:(\\w+(?:\\-\\w+)?|\\w+(?:\\-and-\\w+))?)\\/","selector":"","example":"https://www.wfmz.com/news/area-and-jk-hghj/lehighvalley/hundreds-still-without-power-due-to-high-winds-more-outages-possible/article_a0ee4992-91a1-11ec-bdc9-bb72587f5a97.html","type":"url"},{"regexp":".com\\/[\\w-]+\\/[\\w-]+\\/(?:(\\w+(?:\\-\\w+)?|\\w+(?:\\-and-\\w+))?)\\/","selector":"","example":"https://scnow.com/news/local/staley/article_35d60a96-22f1-11ed-9728-67c1dfe2d2aa.html","type":"url"}],
+        publisherSectionsAutoEnabled: false,
+        publisherUserId: '',
+        publisherUserIdOptions: '{}',
+        readContentType: '',
+        readContentConfig: '',
+        rchURL: '',
+        state: 'not-started',
+        themeData: {"height":80,"min-width":260,"el-play-button":{"id":"trinity"},"wrapper":{"styles":{"@dark":{"background-color":"black"}}},"loading":{"icon":{"color":"#333"}},"el-progress-bar":{"bg-color":"#E4E4E4","passed-color":"#848484"},"version":2,"layout":"coda","el-settings":{"icon":{"id":"translate","styles":{"main-color":"#B3B3B3","main-color-hover":"blue","main-color-active":"#F73AA0","styles":{"width":"24px","height":"24px"}}}}},
+        themeId: '140',
+        themeAppearance: 'light',
+        unitId: '2900013015',
+        unitType: 'tts-player',
+        unitEnvironment: 'web',
+        version: '20240410_0a92857ffd73440af17af1d927bd3c6d17cd12a6'
+    };
+
+    TP.injectScript = function(playerId, injectorScriptId) {
+  var isDOMContentLoaded = false;
+
+  function checkIfDocumentReady() {
+    return ['interactive', 'complete', 'loaded'].indexOf(d.readyState) !== -1 || isDOMContentLoaded;
+  }
+
+  function run() {
+    if (d.body) {
+      if (!d.getElementById(injectorScriptId)) {
+        var js = d.createElement('script');
+        js.type = 'text/javascript';
+        js.setAttribute('crossorigin', 'anonymous');
+        js.setAttribute('fetchpriority', 'high');
+        js.setAttribute('charset', 'UTF-8');
+        js.src = TP.config.injectorScript;
+        js.id = injectorScriptId;
+
+        js.addEventListener('load', createPlayer);
+
+        d.body.appendChild(js);
+      } else {
+        if (TP.isLoaded) createPlayer();
+        else d.getElementById(injectorScriptId).addEventListener('load', createPlayer);
+      }
+    }
+  }
+
+  function createPlayer() {
+    if (TP.players[playerId].__initializing) return;
+
+    if (checkIfDocumentReady()) TP.api && TP.api._internal && TP.api._internal.createPlayer(playerId);
+    else d.addEventListener('DOMContentLoaded', function() {
+      if (isDOMContentLoaded) return;
+
+      isDOMContentLoaded = true;
+      TP.api && TP.api._internal && TP.api._internal.createPlayer(playerId);
+    });
+  }
+
+  run();
+
+  d.addEventListener('DOMContentLoaded', function() {
+    if (isDOMContentLoaded) return;
+
+    isDOMContentLoaded = true;
+    run();
+  });
+};
+
+    TP.injectScript(playerId, 'trinity-tts-js');
+})();
+var __TRINITY_TAG_TIME__ = 22;
