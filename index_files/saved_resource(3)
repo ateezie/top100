@@ -1,0 +1,219 @@
+var __TRINITY_IS_LEGACY__ = false;
+
+try {
+  eval('({...{x: 1}})');
+  eval('let b = window?.x ?? document');
+  eval('(async () => { await Promise.resolve(); })()');
+  eval('const fn = ({a, b = {}, ...c}) => {}');
+  eval('`${window.x}`');
+  eval('(async () => { for await (const item of []) {} })()');
+
+  if (!window.fetch) throw 'No fetch';
+  if (!(typeof Symbol)) throw 'No Symbol';
+} catch (error) {
+  __TRINITY_IS_LEGACY__ = error;
+}
+console.error('Deprecated! FAB should be either: fab, fabAfterView, fabAfterClick, fabOnly');
+(function() {
+    var prefix = __TRINITY_IS_LEGACY__ ? 'legacy/' : '';
+
+    window.TRINITY_PLAYER = window.TRINITY_PLAYER || {
+        isLegacyBrowser: !!__TRINITY_IS_LEGACY__,
+        isDev: false,
+        domain: 'stltoday.com',
+        options: {
+            useBunnyCDN: 0,
+            serverSubdomain: '',
+            pageURL: 'https://www.stltoday.com/life-entertainment/local/food-drink/restaurants/article_0a738938-e03e-4b90-a7b8-7d330686db40.htmlpoweredBy',
+            disabledDepartEvents: ["injectorImp"]        },
+        config: {
+            bundlePath: 'https://vd.trinitymedia.ai/trinity-player/tts-player/20250407_3fa28c84036ae9857f94acb526371e68b29aac8e/',
+            injectorScriptPath: prefix + 'trinity-injector-script.js',
+            SRIHashes: {
+                'trinity-injector-script.js': 'sha384-84qS4JdIGtK6P+ctHn6lnv9+Kp0sYrdDv9KZMzYaYaNGa3f379PVdcQu+w77uBVk',
+                'legacy/trinity-injector-script.js': 'sha384-Kjsx+QE1Qt4vXBWc9gNKROIwtZbDgIXqirMK/ct/hw0paSRtoVRh2nzlrK0+sXZs'
+            }
+        },
+        userAgentData: {"browser":"Chrome","os":"Mac OS X","os_ver":"10.15.7","device":"Mac","browser_ver":"135.0.0","is_bot":false,"is_legacy_browser":true},
+        SDKData: {},
+        userId: '',
+        server: 'staging-audio',
+        server_region: 'us-east-1',
+        server_env: 'STG',
+        publisherId: '23790',
+        ts: Date.now(),
+        tsServer: 1744083606945,
+        isOembed: 0    };
+    const TP = window.TRINITY_PLAYER;
+    const d = document;
+
+    const playerId = d.currentScript.dataset.playerId || '' || '5e717baa35c4ce95042a2b7c6fc6ef80'
+    d.currentScript.setAttribute('data-player-id', playerId); // set dynamically generated ID
+
+    
+    TP.players = TP.players || {};
+    TP.players[playerId] = {
+        isIframe: '',
+        isAMP: '',
+        abTestAlias: '',
+        adsDurationThreshold: '',
+        cf: '',
+        contentURL: 'https://www.stltoday.com/life-entertainment/local/food-drink/restaurants/article_0a738938-e03e-4b90-a7b8-7d330686db40.htmlpoweredBy',
+        documentLoadType: '',
+        documentLoadTypeSelector: '',
+        estimatedDuration: '',
+        filters: [{"name":"nodefiltered","params":["tncms-region-ads","tncms-region","inline-asset","twitter-tweet","social-share-links","tncms-inline-relcontent","subscription-required","inline-article-recommend","hidden-print","media-body"]}],
+        FAB: '1',
+        FABConfig: {"m_bottom":"7%","bottom":"7%"},
+        displayExpanded: {"integration":"adtelligent"},
+        displayOverlay: {"returnToPlayer":{},"integration":"adtelligent"},
+        isTrinityEnabled: true,
+        isShareEnabled: 0,
+        shareEndpoint: '',
+        isNewTextApproach: false,
+        selectorVersion: '1',
+        headlineSelector: '',
+        articleSelector: '',
+        textSelector: '#article-body',
+        imageSelector: '',
+        language: 'en',
+        isTranslationEnabled: true,
+        loaderText: '',
+        paramsObject: {},
+        partnerName: 'Flex',
+        isShowPoweredBy: true,
+        isPoweredByLinkDisabled: '',
+        placeholderSelector: {},
+        playerMode: 'default',
+        playerType: '',
+        integrationType: 'web',
+        pubShare: '1',
+        publisherSections: [{"regexp":".com/(?:(\\w+(?:\\-\\w+)?|\\w+(?:\\-and-\\w+))?)/(?:[\\w\\-\\.]*\\/)*","selector":"","example":"https://buffalonews.com/fsd/article_24df0e59-4441-5197-9f42-0d0d6af8b7cb.html","type":"url","timestamp":1718970648206},{"regexp":".com/[\\w\\-]+\\/(?:(\\w+(?:\\-\\w+)?|\\w+(?:\\-and-\\w+))?)\\/","selector":"","example":"https://www.wfmz.com/news/area-and-jk-hghj/lehighvalley/hundreds-still-without-power-due-to-high-winds-more-outages-possible/article_a0ee4992-91a1-11ec-bdc9-bb72587f5a97.html","type":"url","timestamp":1718970648207},{"regexp":".com\\/[\\w-]+\\/[\\w-]+\\/(?:(\\w+(?:\\-\\w+)?|\\w+(?:\\-and-\\w+))?)\\/","selector":"","example":"https://scnow.com/news/local/staley/article_35d60a96-22f1-11ed-9728-67c1dfe2d2aa.html","type":"url","timestamp":1718970648208}],
+        publisherSectionsAutoEnabled: false,
+        publisherTags: [],
+        publisherUserId: '',
+        publisherUserIdOptions: '{}',
+        readContentType: '',
+        readContentConfig: '',
+        renderOptions: {},
+        rchURL: '',
+        state: 'not-started',
+        themeDataComputed: {"light":{"layout":"coda","height":80,"min-width":260,"loading.icon.color":"#333"},"dark":{"layout":"coda","height":80,"min-width":260,"loading.icon.color":"#333"},"__key":"production:default:194515895a75f0880aad149f6aec4c69769c4b37:0","__debug":{"unitId":"2900018146","themeId":"477","themeOverride":true}},
+        themeId: '477',
+        themeAppearance: 'light',
+        unitId: '2900013015',
+        unitType: 'tts-player',
+        unitEnvironment: 'web',
+        version: '20250407_3fa28c84036ae9857f94acb526371e68b29aac8e'
+    };
+
+    function trinitySendDepart(params) {
+  const data = {
+    t: 'audio',
+    platform: 'Trinity',
+    server: params.server,
+    server_env: params.serverENV,
+    server_region: params.serverRegion,
+    unit_type: params.unitType,
+
+    imp_id: params.impId,
+    user_id: params.userId,
+    kind: params.kind,
+    campaign_id: params.unitId,
+    seller_id: params.publisherId,
+    url: params.url,
+    top_domain: params.topDomain,
+    text_value: params.textValue,
+    user_agent: params.userAgent,
+    user_agent_data: params.userAgentData,
+    player_version: params.playerVersion
+  };
+
+  const resultData = JSON.stringify(data);
+
+  fetch('https://depart.trinitymedia.ai/api/collect?t=audio', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: resultData
+  })
+    .then((response) => response.text())
+    .catch((error) => {
+      console.error('Can not send depart', error, data);
+    });
+
+  console.info('DEPART', resultData);
+}
+    TP.injectScript = function(playerId, injectorScriptId) {
+  var isDOMContentLoaded = false;
+
+  function checkIfDocumentReady() {
+    return ['interactive', 'complete', 'loaded'].indexOf(d.readyState) !== -1 || isDOMContentLoaded;
+  }
+
+  function run() {
+    if (d.body) {
+      if (!d.getElementById(injectorScriptId)) {
+        var js = d.createElement('script');
+        var src = TP.config.bundlePath + TP.config.injectorScriptPath;
+
+        js.type = 'text/javascript';
+        js.setAttribute('crossorigin', 'anonymous');
+        js.setAttribute('integrity', TP.config.SRIHashes[TP.config.injectorScriptPath]);
+        js.setAttribute('fetchpriority', 'high');
+        js.setAttribute('charset', 'UTF-8');
+        js.onerror = () => {
+          trinitySendDepart({
+            server: TP.server,
+            serverENV: TP.server_env,
+            serverRegion: TP.server_region,
+            unitType: TP.players[playerId].unitType,
+            userId: TP.userId,
+            kind: 'errorJSLoad',
+            unitId: Number(TP.players[playerId].unitId),
+            publisherId: Number(TP.publisherId || TP.players[playerId].publisherId),
+            url: window.location.href,
+            topDomain: TP.domain,
+            textValue: src,
+            userAgent: navigator.userAgent,
+            userAgentData: TP.userAgentData,
+            playerVersion: TP.players[playerId].version
+          });
+        };
+        js.src = src;
+        js.id = injectorScriptId;
+
+        js.addEventListener('load', createPlayer);
+
+        d.body.appendChild(js);
+      } else {
+        if (TP.isLoaded) createPlayer();
+        else d.getElementById(injectorScriptId).addEventListener('load', createPlayer);
+      }
+    }
+  }
+
+  function createPlayer() {
+    if (TP.players[playerId].__initializing) return;
+    if (checkIfDocumentReady()) TP.api && TP.api._internal && TP.api._internal.createPlayer(playerId);
+  }
+
+  run();
+
+  d.addEventListener('DOMContentLoaded', () => {
+    isDOMContentLoaded = true;
+  });
+
+  const t = setInterval(() => {
+    if (!checkIfDocumentReady()) return;
+
+    clearInterval(t);
+
+    run();
+  }, 100);
+};
+
+    TP.injectScript(playerId, 'trinity-tts-js');
+})();
+var __TRINITY_TAG_TIME__ = 33;

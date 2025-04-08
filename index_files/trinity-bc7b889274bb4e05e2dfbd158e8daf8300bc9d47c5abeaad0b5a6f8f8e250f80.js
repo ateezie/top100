@@ -1,0 +1,5 @@
+window.BUTTONS = window.BUTTONS || {};
+window.BUTTONS.trinity = {
+ "play": "<svg viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\">\n    <g fill=\"none\" >\n        <circle cx=\"20\" cy=\"20\" r=\"18.889\" stroke=\"#333\" stroke-width=\"2\" class=\"icon-button-outer\"/>\n        <g>\n            <path fill=\"#333\" d=\"M10 7L10 23 20 14.953z\" transform=\"translate(7 5)\" class=\"icon-button-inner\"/>\n        </g>\n    </g>\n</svg>\n",
+ "pause": "<svg viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\">\n    <g fill=\"none\" >\n        <circle cx=\"20\" cy=\"20\" r=\"18.889\" stroke=\"#333\" stroke-width=\"2\" class=\"icon-button-outer\"/>\n        <rect width=\"4\" height=\"16\" fill=\"#333\" x=\"13\" y=\"12\" class=\"icon-button-inner\"></rect>\n        <rect width=\"4\" height=\"16\" fill=\"#333\" x=\"23\" y=\"12\" class=\"icon-button-inner\"></rect>\n    </g>\n</svg>\n"
+};
